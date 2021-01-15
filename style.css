@@ -1,0 +1,388 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header h1 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  
+}
+/* NAVBAR CSS */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.navbar-logo {
+    color: white;
+    letter-spacing: 5px;
+    font-size: 36px;
+}
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+.nav-links li {
+    list-style: none;
+}
+.nav-links a {
+    color: rgb(226, 226,226);
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 14px;
+}
+/* MOBILE NAVBAR CSS */
+.bar {
+    display: none;
+    cursor: pointer;
+}
+.bar div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+   .nav-links{
+       width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position:absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        background-color: rgb(2, 2, 49);
+        transition: transform 0.5s ease-in;
+        z-index: 9999;
+        
+    }
+
+      
+    
+    .nav-links a:hover {
+      background-color:lightgray;
+      color: black;
+      padding: 14px 56px;
+
+    }
+   .nav-links li {
+       opacity: 0;
+   }
+   .bar {
+       display: block;
+   }
+}
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .bar1{
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .bar2{
+  opacity: 0;
+}
+.toggle .bar3{
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* NAVBAR CSS */
+body {
+  background: rgb(136,203,171);
+  background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  color: #fff;
+}
+
+
+/* Typeography General*/
+h1 {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 3em;
+  margin: 2em 1rem;
+}
+
+@media only screen and (min-width: 35em){
+  h1 {
+      font-size: 7em;
+      margin: 2em 4rem 1em;
+  }
+}
+
+h2 {
+  border-bottom: 1px solid #cc1;
+  font-family: 'Oxygen', Sans-Serif;
+  font-size: 3em;
+  color: #fff;
+}
+
+p {
+  line-height: 1.6em;
+  color: #eee;
+}
+
+/* ---- Layout Rules ---- */
+main {
+  margin: 10vh 1em 10vh;
+}
+
+.main-hero {
+  min-height: 40vh;
+  padding-top: 3em;
+  background-size: cover;
+}
+
+section {
+  position: relative;
+  min-height: 80vh;
+}
+
+/* Header Styles */
+.page__header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+/* Footer Styles */
+.page__footer {
+  background: transparent;
+  padding: 3em;
+  color: #fff;
+}
+
+.page__footer p{
+  color: #fff;
+}
+
+
+/* ---- Theme Rules ---- */
+/* Landing Container Styles */
+.landing__container {
+  padding-top: 1em;
+  text-align: left;
+}
+
+@media only screen and (min-width: 35em){
+  .landing__container {
+      max-width: 50em;
+      padding: 4em;
+  }
+}
+
+section:nth-of-type(even) .landing__container {
+  margin-right: 0;
+  margin-left: auto;
+  text-align: right; 
+}
+
+/* Background Circles */
+/* Note that background circles are created with psuedo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type psuedo class */
+section:nth-of-type(odd) .landing__container::before {
+  content: '';
+  background: rgba(255, 255, 255, 0.187);
+  position: absolute;
+  z-index: -5;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .landing__container::before {
+  content: '';
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .landing__container::after {
+  content: '';
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .landing__container::after {
+  content: '';
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+  position: absolute;
+  right: 20vw;
+  bottom: -5em;
+  z-index: -5;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.your-active-class {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+section.your-active-class .landing__container::before {
+  opacity: 1;
+  animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.your-active-class .landing__container::after {
+  opacity: 1;
+  animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg)
+              translate(-1em)
+              rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+              translate(-1em) 
+              rotate(-360deg);
+
+  }
+}
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgb(2, 2, 49); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 20px; /* Increase font size */
+  font-weight: bold;
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+   
+
+
+/*.navbar {
+  margin-top: 0;
+  position: fixed;
+  display:flex;
+  justify-content: space-around;
+  width: 100%;
+  background:rgb(0, 0, 12);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 0px;
+  z-index: 9999;
+}
+
+.select {
+  display: block;
+  margin: 10px 2px 10px 2px;
+  background-color: lightgray;
+  padding: 5px;
+  text-align: center;
+  border-radius: 20%;
+  width: auto;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 10px;
+  text-align: center;
+}
+
+.select:hover {
+  background-color: rgb(208, 219, 159);
+}
+
+.active {
+  background-color: rgb(208, 219, 159);
+}
+
+.active-nav {
+  background-color: rgb(208, 219, 159);
+}
+
+@media screen and (min-width:750px) {
+  .navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .select {
+    margin: 10px 5px;
+    padding: 10px 5px;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+    width: 145px;
+    align-self: center;
+    flex-grow: 1;
+  }
+}
