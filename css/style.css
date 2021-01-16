@@ -25,21 +25,24 @@ nav {
     color: white;
     letter-spacing: 5px;
     font-size: 36px;
+    text-align: center;
 }
-.nav-links {
+.navlinks {
     display: flex;
     justify-content: space-around;
     width: 40%;
+    cursor: pointer;
 }
-.nav-links li {
+.navlinks li {
     list-style: none;
 }
-.nav-links a {
+.navlinks a {
     color: rgb(226, 226,226);
     text-decoration: none;
     letter-spacing: 2px;
     font-weight: bold;
     font-size: 14px;
+    cursor: pointer;
 }
 /* MOBILE NAVBAR CSS */
 .bar {
@@ -54,7 +57,7 @@ nav {
 }
 
 @media screen and (max-width: 1024px) {
-   .nav-links{
+   .navlinks{
        width: 60%;
     }
 }
@@ -63,7 +66,7 @@ nav {
     body {
         overflow-x: hidden;
     }
-    .nav-links {
+    .navlinks {
         position:absolute;
         right: 0px;
         height: 92vh;
@@ -81,13 +84,13 @@ nav {
 
       
     
-    .nav-links a:hover {
+    .navlinks a:hover {
       background-color:lightgray;
       color: black;
       padding: 14px 56px;
 
     }
-   .nav-links li {
+   .navlinks li {
        opacity: 0;
    }
    .bar {
@@ -168,8 +171,13 @@ main {
 section {
   position: relative;
   min-height: 80vh;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
+#sectionBody-active {
+  background: darkred;
+}
 /* Header Styles */
 .page__header {
   background: #fff;
