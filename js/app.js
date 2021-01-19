@@ -1,28 +1,22 @@
-const navlink = document.getElementById('navlinks');
-const navList = ['Section 1', 'Section 2', 'Section 3', 'Section 4'];
 
-   for (let section of navList) {
-       let SectionList = document.createElement('li');
-       SectionList.textContent = section;
-       navlinks.appendChild(SectionList);
-      
-   }
-   
+const sections = document.getElementById('navlinks');
+
+    for (let section of sections) {
+      let SectionList = document.createElement('li');// creating the 'li'
+      SectionList.textContent = section;
+     
+    }
 /********************************/
-const fragment = new DocumentFragment();
-
-navList.forEach(function (navlink) {
-    const a = document.createElement('a');
-    a.innerHTML = item;
-    a.setAttribute('href', `#${navlink}`);
-    const navbar = document.createElement('li');
-    navbar.appendChild(a);
-    fragment.appendChild(navbar);
-})
-
-navlink.appendChild(fragment);
-
-/********************************/ 
+const sections = document.querySelectorAll(".sectionBody");
+    sections.forEach(function (section) {
+      const a = document.createElement('a');
+      a.innerHTML = section.id;
+      a.setAttribute('href', `#${section.id}`);
+      const menuItem = document.createElement('li');// creating it again
+      menuItem.appendChild(a);
+      fragment.appendChild(menuItem);
+    });
+/********************************
 // navbar mobile menu
 function slide() {
   const bar = document.querySelector('.bar');
@@ -98,11 +92,9 @@ document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 /*    HIGHLIGHT NAVBAR   
 let navigLink = document.querySelectorAll('section');
 let sectionList = document.querySelectorAll('#sectionBody');
-
 window.addEventListener('scroll', function(){
     for (list of sectionList) {
       let position = list.getBoundingClientRect();
-
       if (position.top <= 150 && position.bottom >= 150) {
         list.classList.add('active-section');
         for (const navig of navigLink) {
