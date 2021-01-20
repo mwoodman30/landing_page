@@ -1,22 +1,20 @@
 
-const sections = document.getElementById('navlinks');
+const sections = document.querySelector(".navlinks");
 
-    for (let section of sections) {
+    /*for (let section of sections) {
       let SectionList = document.createElement('li');// creating the 'li'
-      SectionList.textContent = section;
-     
-    }
-/********************************/
-const sections = document.querySelectorAll(".sectionBody");
+      SectionList.textContent = section;*/
+    const fragment = new DocumentFragment();
     sections.forEach(function (section) {
       const a = document.createElement('a');
       a.innerHTML = section.id;
       a.setAttribute('href', `#${section.id}`);
-      //const menuItem = document.createElement('li');// creating it again
+      const menuItem = document.createElement('li');
       menuItem.appendChild(a);
       fragment.appendChild(menuItem);
     });
-/********************************/
+  menuItem.appendChild(fragment);
+/********************************
 // navbar mobile menu
 function slide() {
   const bar = document.querySelector('.bar');
@@ -89,7 +87,7 @@ document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
 
 
-/*    HIGHLIGHT NAVBAR   */
+/*    HIGHLIGHT NAVBAR   *
 let navigLink = document.querySelectorAll('section');
 let sectionList = document.querySelectorAll('#sectionBody');
 window.addEventListener('scroll', function(){
@@ -111,4 +109,4 @@ window.addEventListener('scroll', function(){
         }
       }
     }
-});
+});*/
