@@ -12,11 +12,11 @@ const sections = document.querySelectorAll(".sectionBody");
       const a = document.createElement('a');
       a.innerHTML = section.id;
       a.setAttribute('href', `#${section.id}`);
-      const menuItem = document.createElement('li');// creating it again
+      //const menuItem = document.createElement('li');// creating it again
       menuItem.appendChild(a);
       fragment.appendChild(menuItem);
     });
-/********************************
+/********************************/
 // navbar mobile menu
 function slide() {
   const bar = document.querySelector('.bar');
@@ -89,7 +89,7 @@ document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
 
 
-/*    HIGHLIGHT NAVBAR   
+/*    HIGHLIGHT NAVBAR   */
 let navigLink = document.querySelectorAll('section');
 let sectionList = document.querySelectorAll('#sectionBody');
 window.addEventListener('scroll', function(){
@@ -111,4 +111,4 @@ window.addEventListener('scroll', function(){
         }
       }
     }
-});*/
+});
