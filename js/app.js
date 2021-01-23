@@ -1,22 +1,31 @@
+const navbar = document.querySelector('.navlinks');
+const sections = document.querySelectorAll('.sectionBody');
 
-const sections = document.querySelector(".navlinks");
+ for (section of sections) {
+  let navItem = document.createElement('li');
+  let navLink = document.createElement('a');
+  navLink.setAttribute('href', '#',);
+  navLink.id= section.id;
+  navLink.textContent = section.dataset.nav;
+  navItem.appendChild(navLink);
+  navbar.appendChild(navItem);
+}
 
-    /*for (let section of sections) {
-      let SectionList = document.createElement('li');// creating the 'li'
-      SectionList.textContent = section;*/
-    const fragment = new DocumentFragment();
-    sections.forEach(function (section) {
-      const a = document.createElement('a');
-      a.innerHTML = section.id;
-      a.setAttribute('href', `#${section.id}`);
-      const menuItem = document.createElement('li');
-      menuItem.appendChild(a);
-      fragment.appendChild(menuItem);
-    });
-  menuItem.appendChild(fragment);
-/********************************
-// navbar mobile menu
-function slide() {
+/********************************/
+function addActiveClass(){  
+        
+  for (section of sections){
+      if (isInViewport(section)){
+          section.classList.add("your-active-class");
+      }else{
+          section.classList.remove("your-active-class");
+      }
+  }
+};
+
+ /***************************** */
+//navbar mobile menu
+const slide = () => {
   const bar = document.querySelector('.bar');
   const nav = document.querySelector('.navlinks');
   const navLinks = document.querySelectorAll('.navlinks li');
@@ -24,7 +33,7 @@ function slide() {
   //toggle nav
   bar.addEventListener('click', () => {
     nav.classList.toggle('nav-active');
-    //animate links
+    //animate links  //navLinks
     navLinks.forEach((link, index) => {
       if (link.style.animation) {
         link.style.animation = '';
@@ -43,31 +52,31 @@ slide();
 function bar(x) {
   x.classList.toggle("toggle");
 }
-
+/********************************************** */
 //scroll function
-const navLinks = document.querySelectorAll('li')
+const navLinks = document.querySelectorAll('a')
 
 function smoothScroll() {
   navLinks.forEach((link) => {
       link.addEventListener('click', function (e) {
-          const LinkAttribut = link.getAttribute("href").substring(1);
+          const LinkAttribute = link.getAttribute("href").substring(1);
           e.preventDefault();
           const sections = document.querySelectorAll('section');
-          sections.forEach((section) => {
+          for (section of sections) {
               const sectionId = section.id;
-              if (LinkAttribut === sectionId) {
+              if (LinkAttribute === sectionId) {
                   section.scrollIntoView({
                       behavior: 'smooth'
                   })
               }
-          })
+          };
       })
   })
 }
 smoothScroll();
 
-
-mybutton = document.getElementById("myBtn");
+/*************************************************************/
+mybutton = document.getElementById("mysectionBody");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
@@ -85,7 +94,7 @@ document.body.scrollTop = 0; // For Safari
 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-
+/**************************************************************/
 
 /*    HIGHLIGHT NAVBAR   *
 let navigLink = document.querySelectorAll('section');
