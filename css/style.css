@@ -38,6 +38,7 @@ nav {
 }
 .navlinks a {
     color: rgb(226, 226,226);
+    background-color: transparent;
     text-decoration: none;
     letter-spacing: 2px;
     font-weight: bold;
@@ -85,7 +86,7 @@ nav {
       
     
     .navlinks a:hover {
-      background-color:lightgray;
+      
       color: black;
       padding: 14px 56px;
 
@@ -173,6 +174,7 @@ section {
   min-height: 80vh;
   padding-top: 200px;
   padding-bottom: 200px;
+  
 }
 
 #sectionBody-active {
@@ -180,7 +182,7 @@ section {
 }
 /* Header Styles */
 .page__header {
-  background: #fff;
+  /*background: #fff;*/
   position: fixed;
   top: 0;
   width: 100%;
@@ -312,7 +314,7 @@ section.your-active-class .landing__container::after {
 
   }
 }
-#myBtn {
+#mysectionBody {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
@@ -329,68 +331,8 @@ section.your-active-class .landing__container::after {
   font-weight: bold;
 }
 
-#myBtn:hover {
+#mysectionBody:hover {
   background-color: #555; /* Add a dark-grey background on hover */
 }
    
 
-
-/*.navbar {
-  margin-top: 0;
-  position: fixed;
-  display:flex;
-  justify-content: space-around;
-  width: 100%;
-  background:rgb(0, 0, 12);
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 10px 0px;
-  z-index: 9999;
-}
-
-.select {
-  display: block;
-  margin: 10px 2px 10px 2px;
-  background-color: lightgray;
-  padding: 5px;
-  text-align: center;
-  border-radius: 20%;
-  width: auto;
-  font-weight: bolder;
-  cursor: pointer;
-  font-size: 10px;
-  text-align: center;
-}
-
-.select:hover {
-  background-color: rgb(208, 219, 159);
-}
-
-.active {
-  background-color: rgb(208, 219, 159);
-}
-
-.active-nav {
-  background-color: rgb(208, 219, 159);
-}
-
-@media screen and (min-width:750px) {
-  .navbar {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0;
-  }
-  .select {
-    margin: 10px 5px;
-    padding: 10px 5px;
-    font-size: 20px;
-    text-align: center;
-    margin: 10px 10px 10px 10px;
-    width: 145px;
-    align-self: center;
-    flex-grow: 1;
-  }
-}
