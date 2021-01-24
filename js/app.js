@@ -1,3 +1,7 @@
+//  FIX SMOOTH SCROLL
+
+
+
 const navbar = document.querySelector('.navlinks');
 const sections = document.querySelectorAll('.sectionBody');
 
@@ -41,6 +45,41 @@ function bar(x) {
 }
 
 
+
+/******************************************************** */
+let navbarLis = document.querySelectorAll('.navlinks');
+navbarLis = Array.from(navbarLis); 
+
+//Adds an on click eventlistener to each navbar link element 
+navbarLis.forEach(element => {
+    element.addEventListener("click", myScrollFunction);
+});
+
+function myScrollFunction(e) {
+    e.preventDefault();
+    const targetScroll = e.target.hash;
+    const scrollTo = document.querySelector(targetScroll);
+    scrollTo.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+};
+
+
+/******************************************************** */
+// Add class 'active' to section when it is near top of viewport
+function active() {
+  for (const section of sections) {
+    const box = section.getBoundingClientRect();
+    
+    if (box.top <= 150 && box.bottom >= 150) {
+      
+    } else {
+      
+    }
+  }
+}
+// Make sections active
+document.addEventListener("scroll", function() {
+  active();
+});
 /*************************************************************/
 mybutton = document.getElementById("mysectionBody");
 
