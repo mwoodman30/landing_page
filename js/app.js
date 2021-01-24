@@ -5,13 +5,12 @@ const sections = document.querySelectorAll('.sectionBody');
   let navItem = document.createElement('li');
   let navLink = document.createElement('a');
   
-  navLink.setAttribute('href',section.id );
-  //navLink.id= section.id;
+  navLink.setAttribute('href',`#${section.id}` );
   navLink.textContent = section.dataset.nav;
   navItem.appendChild(navLink);
   navbar.appendChild(navItem);
 }
-navItem();
+
 //navbar mobile menu
 const slide = () => {
   const bar = document.querySelector('.bar');
@@ -40,10 +39,6 @@ slide();
 function bar(x) {
   x.classList.toggle("toggle");
 }
-/********************************
-function addActiveClass(){  
-    
-
 
 
 /*************************************************************/
