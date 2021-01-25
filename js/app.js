@@ -70,9 +70,14 @@ function active() {
     const box = section.getBoundingClientRect();
     
     if (box.top <= 150 && box.bottom >= 150) {
-      
+      const id = section.getAttribute("id");
+            document.querySelector(`.${id}`).classList.add("active");
+            section.classList.add("your-active-class");
+
     } else {
-      
+      const id = section.getAttribute("id");
+      document.querySelector(`.${id}`).classList.remove("active");
+      section.classList.remove("your-active-class");
     }
   }
 }
