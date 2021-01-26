@@ -1,3 +1,4 @@
+
 //  FIX SMOOTH SCROLL
 
 
@@ -69,15 +70,13 @@ function active() {
   for (const section of sections) {
     const box = section.getBoundingClientRect();
     
-    if (box.top <= 150 && box.bottom >= 150) {
+    if (box.top <= 0 && box.bottom >= 0) {
       const id = section.getAttribute("id");
-            document.querySelector(`.${id}`).classList.add("active");
             section.classList.add("your-active-class");
 
     } else {
       const id = section.getAttribute("id");
-      document.querySelector(`.${id}`).classList.remove("active");
-      section.classList.remove("your-active-class");
+            section.classList.remove("your-active-class");
     }
   }
 }
@@ -103,4 +102,3 @@ function topFunction() {
 document.body.scrollTop = 0; // For Safari
 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
